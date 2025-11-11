@@ -92,9 +92,9 @@ public class ClienteController {
      * Inativar cliente (soft delete)
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> inativar(@PathVariable Long id) {
+    public ResponseEntity<?> ativarDesativar(@PathVariable Long id) {
         try {
-            clienteService.inativar(id);
+            clienteService.ativarDesativar(id);
             return ResponseEntity.ok().body("Cliente inativado com sucesso");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body("Erro: " + e.getMessage());
